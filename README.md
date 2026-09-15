@@ -63,6 +63,8 @@ matches the `name` in `SKILL.md`, and add one row to the catalog above.
 Maintain a `README.md` inside each skill folder with its purpose, examples,
 requirements, and a link to the shared installation instructions.
 
+Contributions welcome! Open an issue with an idea or submit a PR with a new skill or improvement.
+
 ## License
 
 MIT License. See [LICENSE](LICENSE) for details.
