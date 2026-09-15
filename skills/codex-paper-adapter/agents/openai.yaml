@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Paper Adapter"
+  short_description: "Adapt papers to official templates, content intact."
+  default_prompt: "Use $codex-paper-adapter to adapt this existing Overleaf or LaTeX paper to the official target-conference template without changing its manuscript content."

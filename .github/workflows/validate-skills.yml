@@ -1,0 +1,71 @@
+name: Validate skills
+
+on:
+  push:
+    paths:
+      - "skills/**"
+      - ".github/workflows/validate-skills.yml"
+  pull_request:
+    paths:
+      - "skills/**"
+      - ".github/workflows/validate-skills.yml"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate skill metadata and layout
+        shell: bash
+        run: |
+          ruby -ryaml <<'RUBY'
+          skill_dirs = Dir.glob("skills/*").select { |path| File.directory?(path) }
+          abort "No skills found under skills/" if skill_dirs.empty?
+
+          names = {}
+          allowed_keys = %w[name description license allowed-tools metadata]
+          skill_dirs.sort.each do |dir|
+            skill_file = File.join(dir, "SKILL.md")
+            abort "Missing #{skill_file}" unless File.file?(skill_file)
+
+            text = File.read(skill_file)
+            frontmatter = text.match(/\A---\s*\n(.*?)\n---\s*\n/m)
+            abort "Missing YAML frontmatter in #{skill_file}" unless frontmatter
+
+            metadata = YAML.safe_load(frontmatter[1], permitted_classes: [], aliases: false)
+            abort "Invalid frontmatter in #{skill_file}" unless metadata.is_a?(Hash)
+
+            name = metadata["name"]
+            description = metadata["description"]
+            abort "Missing name in #{skill_file}" unless name.is_a?(String) && !name.empty?
+            abort "Missing description in #{skill_file}" unless description.is_a?(String) && !description.empty?
+            unexpected_keys = metadata.keys.map(&:to_s) - allowed_keys
+            abort "Unexpected frontmatter keys in #{skill_file}: #{unexpected_keys.join(', ')}" unless unexpected_keys.empty?
+            abort "Invalid skill name: #{name}" unless name.match?(/\A[a-z0-9]+(?:-[a-z0-9]+)*\z/) && name.length <= 64
+            abort "Description is too long in #{skill_file}" if description.length > 1024
+            abort "Description contains angle brackets in #{skill_file}" if description.include?("<") || description.include?(">")
+            abort "Unfinished TODO in #{skill_file}" if text.match?(/^\s*\[TODO:[^\n]*\]\s*$/)
+            abort "Folder/name mismatch: #{dir} declares #{name}" unless File.basename(dir) == name
+            abort "Duplicate skill name: #{name}" if names.key?(name)
+            names[name] = skill_file
+
+            openai_yaml = File.join(dir, "agents", "openai.yaml")
+            if File.file?(openai_yaml)
+              YAML.safe_load(File.read(openai_yaml), permitted_classes: [], aliases: false)
+            end
+
+            puts "Validated #{name}"
+          end
+          RUBY
+
+      - name: Compile Python helpers
+        run: python3 -m compileall -q skills
+
+      - name: Reject fixed legacy skill-install paths
+        shell: bash
+        run: |
+          if grep -R -n -E '\$CODEX_HOME/skills|~/\.codex/skills' skills; then
+            echo "Use paths relative to the skill directory instead of a fixed installation path."
+            exit 1
+          fi

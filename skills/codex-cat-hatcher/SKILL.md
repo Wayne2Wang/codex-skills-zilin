@@ -45,12 +45,13 @@ When using a template:
 - If the user asks to change an action, apply the change to the corresponding internal row plan before generating or repairing that row.
 - A user action change only replaces `action` by default. Keep that row's safety/layout constraints unless the new action conflicts with them.
 - Represent user constraints explicitly: `globalConstraints` appends constraints to every row; row-level `addConstraints` appends to one row; row-level `removeConstraints` removes exact default constraints; row-level `constraints` replaces the row's constraint list and should be used only when defaults are incompatible with the requested action.
-- After `prepare_pet_run.py` creates prompts, run:
+- After `prepare_pet_run.py` creates prompts, resolve
+  `CAT_HATCHER_SKILL_DIR` to the directory containing this `SKILL.md`, then run:
 
 ```bash
-"$PYTHON" "$CODEX_HOME/skills/codex-cat-hatcher/scripts/apply_action_template.py" \
+"$PYTHON" "$CAT_HATCHER_SKILL_DIR/scripts/apply_action_template.py" \
   --run-dir "$RUN_DIR" \
-  --template "$CODEX_HOME/skills/codex-cat-hatcher/assets/templates/default-action-template.json"
+  --template "$CAT_HATCHER_SKILL_DIR/assets/templates/default-action-template.json"
 ```
 
 - If the user changed actions, write the final internal row plan to a JSON overrides file and pass it with `--overrides`.
@@ -71,7 +72,7 @@ Use `$hatch-pet`'s normal v2 contract, but order the work to avoid multiplying a
 3. After `running-right` frames pass, derive `running-left` from those clean 192x208 cells when mirroring preserves markings and accessories:
 
 ```bash
-"$PYTHON" "$CODEX_HOME/skills/codex-cat-hatcher/scripts/derive_clean_running_left.py" \
+"$PYTHON" "$CAT_HATCHER_SKILL_DIR/scripts/derive_clean_running_left.py" \
   --run-dir "$RUN_DIR" \
   --confirm-appropriate-mirror \
   --decision-note "<why mirroring preserves this cat's identity>" \
@@ -83,7 +84,7 @@ Use `$hatch-pet`'s normal v2 contract, but order the work to avoid multiplying a
 6. Before the cardinal job, compact look references and select a seated neutral registration frame:
 
 ```bash
-"$PYTHON" "$CODEX_HOME/skills/codex-cat-hatcher/scripts/prepare_look_inputs.py" \
+"$PYTHON" "$CAT_HATCHER_SKILL_DIR/scripts/prepare_look_inputs.py" \
   --run-dir "$RUN_DIR" \
   --max-inputs 5 \
   --neutral-state auto
@@ -94,7 +95,7 @@ The preflight must report `ok: true`, every look job at or below five inputs, an
 7. After extracting the four cardinal anchors, create the cheap blind preflight:
 
 ```bash
-"$PYTHON" "$CODEX_HOME/skills/codex-cat-hatcher/scripts/make_cardinal_blind_sheet.py" \
+"$PYTHON" "$CAT_HATCHER_SKILL_DIR/scripts/make_cardinal_blind_sheet.py" \
   --run-dir "$RUN_DIR"
 ```
 

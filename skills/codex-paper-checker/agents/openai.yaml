@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Paper Checker"
+  short_description: "Audit papers for correctness and reference integrity"
+  default_prompt: "Use $codex-paper-checker to audit this paper for mathematical, writing, formatting, venue-compliance, and reference-integrity problems."
