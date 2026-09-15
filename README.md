@@ -46,7 +46,7 @@ ln -s ~/codex-skills-zilin/skills/codex-paper-checker ~/.agents/skills/codex-pap
 Or symlink all skills with one command:
 
 ```bash
-for skill in ~/codex-skills-zilin/skills/*/; do target="$HOME/.agents/skills/$(basename "$skill")"; if [ ! -e "$target" ] && [ ! -L "$target" ]; then ln -s "${skill%/}" "$target"; fi; done
+bash ~/codex-skills-zilin/scripts/install-skills.sh
 ```
 
 Existing installations are left untouched. Run this command again after pulling
