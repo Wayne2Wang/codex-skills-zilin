@@ -31,7 +31,7 @@ Open a skill's README for usage examples and requirements.
 Clone the collection once:
 
 ```bash
-git clone https://github.com/Wayne2Wang/codex-skills-zilin.git ~/codex-skills-zilin
+git clone --depth 1 https://github.com/Wayne2Wang/codex-skills-zilin.git ~/codex-skills-zilin
 mkdir -p ~/.agents/skills
 ```
 
