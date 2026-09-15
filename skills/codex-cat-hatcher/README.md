@@ -1,6 +1,8 @@
 # Codex Cat Hatcher
 
-> A Codex skill that turns your cat into a realistic, animated Codex pet.
+> *Your cat, by your side in Codex.*
+
+A Codex skill that turns your cat into a realistic, animated Codex pet.
 
 [![Codex Skill](https://img.shields.io/badge/Codex-Skill-111111)](https://developers.openai.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../../LICENSE)
