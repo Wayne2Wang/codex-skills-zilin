@@ -56,17 +56,6 @@ To update every installed skill, pull the collection once:
 git -C ~/codex-skills-zilin pull
 ```
 
-### Existing standalone installations
-
-The skills now use the `zilin-` prefix instead of `codex-`. If you installed
-an older version, move the old `codex-cat-hatcher`, `codex-paper-adapter`, and
-`codex-paper-checker` directories or symlinks outside your skills folder,
-preserving any customizations, then run the installer again. Use the new
-`$zilin-cat-hatcher`, `$zilin-paper-adapter`, and `$zilin-paper-checker` names.
-
-The repository root is not a skill directory; install the individual folders
-under `skills/` using the commands above.
-
 ## Adding another skill
 
 Add a self-contained directory at `skills/<skill-name>/`, ensure its folder name
