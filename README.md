@@ -1,4 +1,4 @@
-# Wayne's Codex Skills
+# Zilin's Codex Skills
 
 > A growing collection of focused skills for Codex.
 
@@ -11,11 +11,20 @@ the existing ones.
 
 ## Skills
 
-| Skill | Purpose | Example invocation |
-| --- | --- | --- |
-| [`codex-cat-hatcher`](skills/codex-cat-hatcher) | Create realistic animated Codex pets from a cat photo. | `Use $codex-cat-hatcher to create a Codex pet for my cat.` |
-| [`codex-paper-adapter`](skills/codex-paper-adapter) | Migrate an existing LaTeX paper to an official conference template without rewriting its content. | `Use $codex-paper-adapter to migrate this paper to the official target template.` |
-| [`codex-paper-checker`](skills/codex-paper-checker) | Audit near-final computer vision and robotics papers for technical, formatting, venue, and reference problems. | `Use $codex-paper-checker to audit this submission.` |
+### Paper Preparation
+
+| Skill | Purpose |
+| --- | --- |
+| [codex&#8209;paper&#8209;adapter](skills/codex-paper-adapter) | Adapt LaTeX papers to official conference templates while preserving manuscript content. |
+| [codex&#8209;paper&#8209;checker](skills/codex-paper-checker) | Audit papers for technical correctness, formatting, venue compliance, and reference integrity. |
+
+### Miscellaneous
+
+| Skill | Purpose |
+| --- | --- |
+| [codex&#8209;cat&#8209;hatcher](skills/codex-cat-hatcher) | Turn your cat photo into a realistic animated Codex pet. |
+
+Open a skill's README for usage examples and requirements.
 
 ## Install
 
