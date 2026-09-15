@@ -31,16 +31,16 @@ Open a skill's README for usage examples and requirements.
 Clone the collection once:
 
 ```bash
-git clone https://github.com/Wayne2Wang/codex-skills.git ~/codex-skills
+git clone https://github.com/Wayne2Wang/codex-skills.git ~/codex-skills-zilin
 mkdir -p ~/.agents/skills
 ```
 
 Then symlink whichever skills you want Codex to discover:
 
 ```bash
-ln -s ~/codex-skills/skills/codex-cat-hatcher ~/.agents/skills/codex-cat-hatcher
-ln -s ~/codex-skills/skills/codex-paper-adapter ~/.agents/skills/codex-paper-adapter
-ln -s ~/codex-skills/skills/codex-paper-checker ~/.agents/skills/codex-paper-checker
+ln -s ~/codex-skills-zilin/skills/codex-cat-hatcher ~/.agents/skills/codex-cat-hatcher
+ln -s ~/codex-skills-zilin/skills/codex-paper-adapter ~/.agents/skills/codex-paper-adapter
+ln -s ~/codex-skills-zilin/skills/codex-paper-checker ~/.agents/skills/codex-paper-checker
 ```
 
 Codex follows symlinked skill directories. Restart Codex if a newly installed
@@ -49,7 +49,7 @@ skill does not appear immediately.
 To update every installed skill, pull the collection once:
 
 ```bash
-git -C ~/codex-skills pull
+git -C ~/codex-skills-zilin pull
 ```
 
 ### Existing standalone installations
