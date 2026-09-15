@@ -35,16 +35,10 @@ git clone https://github.com/Wayne2Wang/codex-skills.git ~/codex-skills-zilin
 mkdir -p ~/.agents/skills
 ```
 
-Install one skill by name:
+Install skills by name through simlinks:
 
 ```bash
-bash ~/codex-skills-zilin/scripts/install-skills.sh codex-cat-hatcher
-```
-
-Or specify several skills:
-
-```bash
-bash ~/codex-skills-zilin/scripts/install-skills.sh codex-cat-hatcher codex-paper-checker
+bash ~/codex-skills-zilin/scripts/install-skills.sh codex-paper-adapter codex-paper-checker
 ```
 
 Or symlink all skills with one command:
@@ -53,15 +47,10 @@ Or symlink all skills with one command:
 bash ~/codex-skills-zilin/scripts/install-skills.sh
 ```
 
-Existing installations are left untouched. Run this command again after pulling
-to install newly added skills.
-If any requested name is unknown, the script lists available skills and exits
-before installing anything.
-
-Codex follows symlinked skill directories. Restart Codex if a newly installed
+Existing installations are left untouched. Restart Codex if a newly installed
 skill does not appear immediately.
 
-To update every installed skill, pull the collection once:
+To update every installed skill, pull the collection once and reinstall:
 
 ```bash
 git -C ~/codex-skills-zilin pull
