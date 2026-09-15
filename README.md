@@ -50,35 +50,12 @@ The repository root is no longer a skill directory. If you previously cloned
 nested `skills/codex-cat-hatcher` directory above. Keep only one installed copy
 of each skill name so Codex does not show duplicates.
 
-## Dependencies
-
-`codex-cat-hatcher` wraps the `$hatch-pet` workflow and requires that skill to
-be available in the Codex environment. The two paper skills have no bundled
-runtime dependencies.
-
-## Codex Cat Hatcher
-
-`$codex-cat-hatcher` guides users through the animation plan and delegates
-generation, QA, and packaging to `$hatch-pet`.
-
-For example, here is what I got for my tabby cat `pipi`.
-
-<p align="center">
-  <img src="skills/codex-cat-hatcher/assets/examples/default-cat/pipi.jpg" width="260" alt="Pipi, the tabby cat featured in the example animations">
-</p>
-
-| Idle | Greeting | Jumping (on hover) | Failed | Waiting |
-| --- | --- | --- | --- | --- |
-| <img src="skills/codex-cat-hatcher/assets/examples/default-cat/gifs/idle.gif" width="130" alt="Idle animation"> | <img src="skills/codex-cat-hatcher/assets/examples/default-cat/gifs/waving.gif" width="130" alt="Greeting animation"> | <img src="skills/codex-cat-hatcher/assets/examples/default-cat/gifs/jumping.gif" width="130" alt="Jumping animation"> | <img src="skills/codex-cat-hatcher/assets/examples/default-cat/gifs/failed.gif" width="130" alt="Failed animation"> | <img src="skills/codex-cat-hatcher/assets/examples/default-cat/gifs/waiting.gif" width="130" alt="Waiting animation"> |
-
-| Active Working | Reviewing | Moving Right | Moving Left | Looking Around |
-| --- | --- | --- | --- | --- |
-| <img src="skills/codex-cat-hatcher/assets/examples/default-cat/gifs/active-working.gif" width="130" alt="Active working animation"> | <img src="skills/codex-cat-hatcher/assets/examples/default-cat/gifs/review.gif" width="130" alt="Reviewing animation"> | <img src="skills/codex-cat-hatcher/assets/examples/default-cat/gifs/running-right.gif" width="130" alt="Moving right animation"> | <img src="skills/codex-cat-hatcher/assets/examples/default-cat/gifs/running-left.gif" width="130" alt="Moving left animation"> | <img src="skills/codex-cat-hatcher/assets/examples/default-cat/gifs/look-directions.gif" width="130" alt="Looking around animation"> |
-
 ## Adding another skill
 
 Add a self-contained directory at `skills/<skill-name>/`, ensure its folder name
 matches the `name` in `SKILL.md`, and add one row to the catalog above.
+Maintain a `README.md` inside each skill folder with its purpose, examples,
+requirements, and a link to the shared installation instructions.
 
 ## License
 
