@@ -34,9 +34,9 @@ paper/
 
 The resulting entry point accounts for the official template's key components. Optional components that are not needed remain visible as commented loading lines with an explanation, while mandatory author-supplied sections remain active with a conspicuous TODO until the authors complete them.
 
-## Install
+## Installation
 
-Follow the [collection installation instructions](../../README.md#install) and
+Follow the [collection installation instructions](../../README.md#installation) and
 select this skill. See [SKILL.md](SKILL.md) for the complete workflow.
 
 ## Example Usage

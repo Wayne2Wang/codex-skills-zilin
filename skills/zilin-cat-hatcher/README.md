@@ -24,9 +24,9 @@ For example, here is what I got for my tabby cat `pipi`.
 | --- | --- | --- | --- | --- |
 | <img src="assets/examples/default-cat/gifs/active-working.gif" width="130" alt="Active working animation"> | <img src="assets/examples/default-cat/gifs/review.gif" width="130" alt="Reviewing animation"> | <img src="assets/examples/default-cat/gifs/running-right.gif" width="130" alt="Moving right animation"> | <img src="assets/examples/default-cat/gifs/running-left.gif" width="130" alt="Moving left animation"> | <img src="assets/examples/default-cat/gifs/look-directions.gif" width="130" alt="Looking around animation"> |
 
-## Install
+## Installation
 
-Follow the [collection installation instructions](../../README.md#install) and
+Follow the [collection installation instructions](../../README.md#installation) and
 select this skill. See [SKILL.md](SKILL.md) for the complete workflow.
 
 Requires the `$hatch-pet` skill for generation, QA, and packaging.

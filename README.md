@@ -26,7 +26,7 @@ the existing ones.
 
 Open a skill's README for usage examples and requirements.
 
-## Install
+## Installation
 
 Clone the collection once:
 

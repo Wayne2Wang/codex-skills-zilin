@@ -18,9 +18,9 @@ formatting errors, reviewer-facing risks, venue compliance, and bibliography int
 | Check current official venue requirements | Claim compliance when checks remain unresolved |
 | Separate proven errors from reviewer-facing risks | Guarantee acceptance or infallible verification |
 
-## Install
+## Installation
 
-Follow the [collection installation instructions](../../README.md#install) and
+Follow the [collection installation instructions](../../README.md#installation) and
 select this skill. See [SKILL.md](SKILL.md) for the complete workflow.
 
 ## Example Usage
