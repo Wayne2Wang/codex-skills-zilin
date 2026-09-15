@@ -11,7 +11,7 @@ the existing ones.
 
 ## Skills
 
-### Paper Preparation
+### Research
 
 | Skill | Purpose |
 | --- | --- |
