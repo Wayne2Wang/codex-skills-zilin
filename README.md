@@ -43,6 +43,15 @@ ln -s ~/codex-skills-zilin/skills/codex-paper-adapter ~/.agents/skills/codex-pap
 ln -s ~/codex-skills-zilin/skills/codex-paper-checker ~/.agents/skills/codex-paper-checker
 ```
 
+Or symlink all skills with one command:
+
+```bash
+for skill in ~/codex-skills-zilin/skills/*/; do target="$HOME/.agents/skills/$(basename "$skill")"; if [ ! -e "$target" ] && [ ! -L "$target" ]; then ln -s "${skill%/}" "$target"; fi; done
+```
+
+Existing installations are left untouched. Run this command again after pulling
+to install newly added skills.
+
 Codex follows symlinked skill directories. Restart Codex if a newly installed
 skill does not appear immediately.
 
