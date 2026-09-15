@@ -35,12 +35,16 @@ git clone https://github.com/Wayne2Wang/codex-skills.git ~/codex-skills-zilin
 mkdir -p ~/.agents/skills
 ```
 
-Then symlink whichever skills you want Codex to discover:
+Install one skill by name:
 
 ```bash
-ln -s ~/codex-skills-zilin/skills/codex-cat-hatcher ~/.agents/skills/codex-cat-hatcher
-ln -s ~/codex-skills-zilin/skills/codex-paper-adapter ~/.agents/skills/codex-paper-adapter
-ln -s ~/codex-skills-zilin/skills/codex-paper-checker ~/.agents/skills/codex-paper-checker
+bash ~/codex-skills-zilin/scripts/install-skills.sh codex-cat-hatcher
+```
+
+Or specify several skills:
+
+```bash
+bash ~/codex-skills-zilin/scripts/install-skills.sh codex-cat-hatcher codex-paper-checker
 ```
 
 Or symlink all skills with one command:
@@ -51,6 +55,8 @@ bash ~/codex-skills-zilin/scripts/install-skills.sh
 
 Existing installations are left untouched. Run this command again after pulling
 to install newly added skills.
+If any requested name is unknown, the script lists available skills and exits
+before installing anything.
 
 Codex follows symlinked skill directories. Restart Codex if a newly installed
 skill does not appear immediately.
