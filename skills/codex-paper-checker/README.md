@@ -1,6 +1,8 @@
 # Codex Paper Checker
 
-> A Codex skill that audits near-final computer vision and robotics papers before submission.
+> *Your paper. A sharper second look.*
+
+A Codex skill that audits near-final computer vision and robotics papers before submission.
 
 [![Codex Skill](https://img.shields.io/badge/Codex-Skill-111111)](https://developers.openai.com/)
 [![LaTeX](https://img.shields.io/badge/LaTeX-008080?logo=latex&logoColor=white)](https://www.latex-project.org/)
