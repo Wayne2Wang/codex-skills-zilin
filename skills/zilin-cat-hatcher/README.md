@@ -1,4 +1,4 @@
-# Codex Cat Hatcher
+# Zilin Cat Hatcher
 
 > *Your cat, by your side in Codex.*
 
@@ -7,7 +7,7 @@ A Codex skill that turns your cat into a realistic, animated Codex pet.
 [![Codex Skill](https://img.shields.io/badge/Codex-Skill-111111)](https://developers.openai.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../../LICENSE)
 
-`$codex-cat-hatcher` guides users through the animation plan and delegates generation, QA, and packaging to `$hatch-pet`.
+`$zilin-cat-hatcher` guides users through the animation plan and delegates generation, QA, and packaging to `$hatch-pet`.
 
 
 For example, here is what I got for my tabby cat `pipi`.
@@ -35,7 +35,7 @@ Requires the `$hatch-pet` skill for generation, QA, and packaging.
 
 **User**
 ```text
-Use $codex-cat-hatcher to create a realistic Codex pet for my cat.
+Use $zilin-cat-hatcher to create a realistic Codex pet for my cat.
 ```
 
 **Codex**

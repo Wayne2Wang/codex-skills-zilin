@@ -6,7 +6,7 @@ Run this before delivering or installing a pet.
 
 - The pet still reads as the user's cat, not a generic cat.
 - The style remains realistic, not cartoon or sticker-like, unless requested.
-- Every row's visible action matches the confirmed Codex Cat Hatcher action template, not generic `$hatch-pet` row defaults.
+- Every row's visible action matches the confirmed Zilin Cat Hatcher action template, not generic `$hatch-pet` row defaults.
 - The motion was generated from the confirmed text action plan and cat photo, not copied from bundled example GIFs or another pet.
 - Idle defaults to the confirmed sleeping/paw-over-eyes action when the user chose "keep defaults".
 - Jumping/on-hover defaults to a small paw-wave action when the user chose "keep defaults".

@@ -1,11 +1,11 @@
 ---
-name: codex-paper-checker
+name: zilin-paper-checker
 description: "Audit near-final computer vision and robotics conference papers for mathematical and notation correctness, high-confidence writing and formatting errors, reviewer-facing risks, current venue compliance, and exhaustive bibliography integrity. Use for submission PDFs or LaTeX projects before submission, revision, or rebuttal; do not use to draft a paper from scratch or migrate it to another template."
 metadata:
   short-description: "Strict technical and reference audit for papers"
 ---
 
-# Codex Paper Checker
+# Zilin Paper Checker
 
 Audit a paper as a meticulous top-conference reviewer and production checker. Optimize for findings the authors should actually act on. Do not pad the review with optional rewrites or subjective stylistic preferences.
 

@@ -1,9 +1,9 @@
 ---
-name: codex-paper-adapter
+name: zilin-paper-adapter
 description: Migrate an existing Overleaf or LaTeX paper to an official conference template while preserving all author-written manuscript and bibliography content. Use when changing a paper's venue or template version, correcting its conference-project structure, or auditing whether an existing migration conforms to the target venue. Do not use to draft, rewrite, or complete the paper.
 ---
 
-# Codex Paper Adapter
+# Zilin Paper Adapter
 
 Convert the project structurally and losslessly: the result should use the verified official template for the requested venue, year, and submission stage, while the authors' title, prose, equations, figures, tables, labels, citations, bibliography records, comments, and supplementary material remain unchanged.
 

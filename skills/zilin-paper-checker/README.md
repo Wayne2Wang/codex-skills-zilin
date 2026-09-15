@@ -1,4 +1,4 @@
-# Codex Paper Checker
+# Zilin Paper Checker
 
 > *Your paper. A sharper second look.*
 
@@ -8,7 +8,7 @@ A Codex skill that audits near-final computer vision and robotics papers before 
 [![LaTeX](https://img.shields.io/badge/LaTeX-008080?logo=latex&logoColor=white)](https://www.latex-project.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../../LICENSE)
 
-`$codex-paper-checker` checks mathematical and notation correctness, writing and
+`$zilin-paper-checker` checks mathematical and notation correctness, writing and
 formatting errors, reviewer-facing risks, venue compliance, and bibliography integrity.
 
 | It can | It will not |
@@ -28,14 +28,14 @@ select this skill. See [SKILL.md](SKILL.md) for the complete workflow.
 **User**
 
 ```text
-Use $codex-paper-checker to audit this submission PDF and LaTeX project.
+Use $zilin-paper-checker to audit this submission PDF and LaTeX project.
 Check every bibliography entry and report the highest-priority fixes.
 ```
 
 For a focused check:
 
 ```text
-Use $codex-paper-checker to check only the equations and notation in this paper.
+Use $zilin-paper-checker to check only the equations and notation in this paper.
 ```
 
 ## Inputs and Requirements

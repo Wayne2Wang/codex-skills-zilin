@@ -1,9 +1,9 @@
 ---
-name: codex-cat-hatcher
+name: zilin-cat-hatcher
 description: "Guide a user through a multi-step intake to create realistic Codex v2 animated pet assets from their cat photo: first ask for the pet name, then present default user-facing actions by trigger/state, ask whether to change actions or constraints, then request the cat photo, then use the hatch-pet workflow for generation, QA, and packaging. Use when a user asks to generate a Codex pet, realistic cat pet, cat-photo pet, pet spritesheet, pet.json package, or wants a template-driven pet skill with editable actions such as idle, waving, waiting, running-left, running-right, failed, active working, or review."
 ---
 
-# Codex Cat Hatcher
+# Zilin Cat Hatcher
 
 ## Overview
 

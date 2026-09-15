@@ -120,7 +120,7 @@ def main() -> None:
     parser.add_argument(
         "--template",
         required=True,
-        help="Codex Cat Hatcher action template JSON.",
+        help="Zilin Cat Hatcher action template JSON.",
     )
     parser.add_argument(
         "--frames-root",

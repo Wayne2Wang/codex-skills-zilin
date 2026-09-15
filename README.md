@@ -15,14 +15,14 @@ the existing ones.
 
 | Skill | Purpose |
 | --- | --- |
-| [codex&#8209;paper&#8209;adapter](skills/codex-paper-adapter) | Adapt LaTeX papers to official conference templates while preserving manuscript content. |
-| [codex&#8209;paper&#8209;checker](skills/codex-paper-checker) | Audit papers for technical correctness, formatting, venue compliance, and reference integrity. |
+| [zilin&#8209;paper&#8209;adapter](skills/zilin-paper-adapter) | Adapt LaTeX papers to official conference templates while preserving manuscript content. |
+| [zilin&#8209;paper&#8209;checker](skills/zilin-paper-checker) | Audit papers for technical correctness, formatting, venue compliance, and reference integrity. |
 
 ### Miscellaneous
 
 | Skill | Purpose |
 | --- | --- |
-| [codex&#8209;cat&#8209;hatcher](skills/codex-cat-hatcher) | Turn your cat photo into a realistic animated Codex pet. |
+| [zilin&#8209;cat&#8209;hatcher](skills/zilin-cat-hatcher) | Turn your cat photo into a realistic animated Codex pet. |
 
 Open a skill's README for usage examples and requirements.
 
@@ -38,7 +38,7 @@ mkdir -p ~/.agents/skills
 Install skills by name through simlinks:
 
 ```bash
-bash ~/codex-skills-zilin/scripts/install-skills.sh codex-paper-adapter codex-paper-checker
+bash ~/codex-skills-zilin/scripts/install-skills.sh zilin-paper-adapter zilin-paper-checker
 ```
 
 Or symlink all skills with one command:
@@ -50,7 +50,7 @@ bash ~/codex-skills-zilin/scripts/install-skills.sh
 Existing installations are left untouched. Restart Codex if a newly installed
 skill does not appear immediately.
 
-To update every installed skill, pull the collection once and reinstall:
+To update every installed skill, pull the collection once:
 
 ```bash
 git -C ~/codex-skills-zilin pull
@@ -58,10 +58,14 @@ git -C ~/codex-skills-zilin pull
 
 ### Existing standalone installations
 
-The repository root is no longer a skill directory. If you previously cloned
-`codex-cat-hatcher` directly into a Codex skills folder, reinstall it using the
-nested `skills/codex-cat-hatcher` directory above. Keep only one installed copy
-of each skill name so Codex does not show duplicates.
+The skills now use the `zilin-` prefix instead of `codex-`. If you installed
+an older version, move the old `codex-cat-hatcher`, `codex-paper-adapter`, and
+`codex-paper-checker` directories or symlinks outside your skills folder,
+preserving any customizations, then run the installer again. Use the new
+`$zilin-cat-hatcher`, `$zilin-paper-adapter`, and `$zilin-paper-checker` names.
+
+The repository root is not a skill directory; install the individual folders
+under `skills/` using the commands above.
 
 ## Adding another skill
 

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Codex Cat Hatcher"
-  short_description: "Hatch realistic Codex pets from cat photos."
-  default_prompt: "Use $codex-cat-hatcher to name my pet, confirm the action plan, and create a realistic Codex pet from my cat photo."

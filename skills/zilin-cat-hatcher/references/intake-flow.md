@@ -1,4 +1,4 @@
-# Codex Cat Hatcher Intake Flow
+# Zilin Cat Hatcher Intake Flow
 
 Use this before generating a new pet. The goal is to collect the pet name first, confirm the user-facing action plan second, then collect the cat photo, then generate assets.
 
@@ -75,7 +75,7 @@ Before asking for the photo or generating, summarize only changed actions plus g
 If there are no changes, say:
 
 ```text
-Using the default Codex Cat Hatcher action template. Please attach the cat photo.
+Using the default Zilin Cat Hatcher action template. Please attach the cat photo.
 ```
 
 If there are changes, say:

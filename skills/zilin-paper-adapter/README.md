@@ -1,4 +1,4 @@
-# Codex Paper Adapter
+# Zilin Paper Adapter
 
 > *You write. It formats.*
 
@@ -8,7 +8,7 @@ A Codex skill that migrates an existing paper to a new official conference templ
 [![LaTeX](https://img.shields.io/badge/LaTeX-008080?logo=latex&logoColor=white)](https://www.latex-project.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../../LICENSE)
 
-`$codex-paper-adapter` verifies the live official source, rewires the project, and leaves the manuscript unchanged.
+`$zilin-paper-adapter` verifies the live official source, rewires the project, and leaves the manuscript unchanged.
 
 | It can | It will not |
 | --- | --- |
@@ -43,14 +43,14 @@ select this skill. See [SKILL.md](SKILL.md) for the complete workflow.
 
 **User**
 ```text
-Use $codex-paper-adapter to migrate this existing Overleaf paper
+Use $zilin-paper-adapter to migrate this existing Overleaf paper
 from the NeurIPS 2025 template to the official ICLR 2027 review template.
 ```
 
 You can also ask for an audit without requesting changes:
 
 ```text
-Use $codex-paper-adapter to audit whether this repository conforms
+Use $zilin-paper-adapter to audit whether this repository conforms
 to the official ICML 2027 submission template. Do not modify any files.
 ```
 

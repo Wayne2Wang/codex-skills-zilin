@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Apply the Codex Cat Hatcher action template to a hatch-pet run."""
+"""Apply the Zilin Cat Hatcher action template to a hatch-pet run."""
 
 from __future__ import annotations
 
@@ -218,7 +218,7 @@ def main() -> None:
     parser.add_argument(
         "--template",
         required=True,
-        help="Codex Cat Hatcher action template JSON, usually assets/templates/default-action-template.json.",
+        help="Zilin Cat Hatcher action template JSON, usually assets/templates/default-action-template.json.",
     )
     parser.add_argument(
         "--overrides",

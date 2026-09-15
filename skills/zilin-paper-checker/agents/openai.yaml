@@ -1,0 +1,4 @@
+interface:
+  display_name: "Zilin Paper Checker"
+  short_description: "Audit papers for correctness and reference integrity"
+  default_prompt: "Use $zilin-paper-checker to audit this paper for mathematical, writing, formatting, venue-compliance, and reference-integrity problems."

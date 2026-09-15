@@ -1,7 +1,7 @@
 {
-  "templateId": "codex-cat-hatcher-default",
-  "templateName": "Codex Cat Hatcher Default",
-  "purpose": "Default action template for Codex Cat Hatcher realistic cat-photo pets.",
+  "templateId": "zilin-cat-hatcher-default",
+  "templateName": "Zilin Cat Hatcher Default",
+  "purpose": "Default action template for Zilin Cat Hatcher realistic cat-photo pets.",
   "style": {
     "preset": "auto",
     "notes": "Realistic photo-derived domestic cat. Preserve the input cat's face, coat markings, eye color, ear shape, whiskers, and proportions. Avoid cartoon, sticker, plush, toy, or painterly style unless the user explicitly asks."
