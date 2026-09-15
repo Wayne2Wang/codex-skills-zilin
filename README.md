@@ -31,7 +31,7 @@ Open a skill's README for usage examples and requirements.
 Clone the collection once:
 
 ```bash
-git clone https://github.com/Wayne2Wang/codex-cat-hatcher.git ~/codex-skills
+git clone https://github.com/Wayne2Wang/codex-skills.git ~/codex-skills
 mkdir -p ~/.agents/skills
 ```
 
