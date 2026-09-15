@@ -1,6 +1,8 @@
 # Codex Paper Adapter
 
-> A Codex skill that migrates an existing paper to a new official conference template.
+> *You write. It formats.*
+
+A Codex skill that migrates an existing paper to a new official conference template.
 
 [![Codex Skill](https://img.shields.io/badge/Codex-Skill-111111)](https://developers.openai.com/)
 [![LaTeX](https://img.shields.io/badge/LaTeX-008080?logo=latex&logoColor=white)](https://www.latex-project.org/)
