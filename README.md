@@ -23,6 +23,7 @@ the existing ones.
 | Skill | Purpose |
 | --- | --- |
 | [zilin&#8209;cat&#8209;hatcher](skills/zilin-cat-hatcher) | Turn your cat photo into a realistic animated Codex pet. |
+| [zilin&#8209;slide&#8209;narrator](skills/zilin-slide-narrator) | Turn PDF slides and rough notes into a narrated player and video with audio-aligned captions. |
 
 Open a skill's README for usage examples and requirements.
 

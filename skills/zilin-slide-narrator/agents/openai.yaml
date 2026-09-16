@@ -1,0 +1,4 @@
+interface:
+  display_name: "Zilin Slide Narrator"
+  short_description: "Guided slide narration, aligned captions, and video"
+  default_prompt: "Use $zilin-slide-narrator to turn my slides and rough notes into a narrated player and video, confirming defaults before starting."

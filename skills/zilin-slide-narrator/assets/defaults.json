@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "coverage": {
+    "include_all_other_slides": true,
+    "exclude_sections": []
+  },
+  "teaching": {
+    "style": "natural instructor teaching students",
+    "detail": "concise but complete per-slide coverage",
+    "added_running_examples": false,
+    "encourage_initial_notes": true,
+    "language": "English"
+  },
+  "draft": {
+    "engine": "macOS say",
+    "voice": "Samantha",
+    "words_per_minute": 150
+  },
+  "final_voice": {
+    "provider": "ElevenLabs",
+    "voice": "Evan - Calm, Grounded & Reflective",
+    "model": "Eleven Multilingual v2",
+    "speed": 0.92,
+    "stability": 0.8,
+    "similarity": 0.8,
+    "style": 0,
+    "speaker_boost": true,
+    "panning": 0.5,
+    "language_override": false,
+    "audio_effects": false,
+    "format": "MP3 44.1 kHz 128kbps"
+  },
+  "review": {
+    "intake_confirmation": true,
+    "native_script_approval": true,
+    "sample_slide_count": 2,
+    "sample_approval_before_bulk": true
+  },
+  "budget": {
+    "use_available_credits_only": true,
+    "automatic_purchase": false,
+    "partial_completion": "confirm during intake"
+  },
+  "outputs": {
+    "player": true,
+    "video": true,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "static_fps": 2,
+    "inter_slide_silence_seconds": 1,
+    "captions": "forced alignment to final playable audio",
+    "caption_formats": [
+      "player",
+      "SRT",
+      "VTT",
+      "MP4 selectable English"
+    ],
+    "cc_default_on": true,
+    "per_slide_transcript": true
+  },
+  "design": {
+    "background": "#10162b",
+    "accent": "#ffcc67",
+    "match_course_website": false,
+    "student_facing_only": true
+  },
+  "deployment": {
+    "ask": true,
+    "mode": "local or ready-to-upload package",
+    "suggested_public_host": "GitHub Pages",
+    "repository_scope": "one presentation collection; course and term when applicable",
+    "root_homepage": true
+  },
+  "presets": {
+    "teaching": {
+      "include_hackathon_announcements": true,
+      "exclude_sections": [
+        "office hours",
+        "questions",
+        "Q&A"
+      ]
+    }
+  }
+}
