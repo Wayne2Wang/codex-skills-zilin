@@ -24,6 +24,7 @@ the existing ones.
 | Skill | Purpose |
 | --- | --- |
 | [zilin&#8209;cat&#8209;hatcher](skills/zilin-cat-hatcher) | Turn your cat photo into a realistic animated Codex pet. |
+| [zilin&#8209;skill&#8209;integrator](skills/zilin-skill-integrator) | Integrate skills into this collection with consistent documentation, packaging, and validation. |
 
 Open a skill's README for usage examples and requirements.
 

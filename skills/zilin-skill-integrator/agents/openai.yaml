@@ -1,0 +1,4 @@
+interface:
+  display_name: "Zilin Skill Integrator"
+  short_description: "Integrate skills with consistent repo conventions"
+  default_prompt: "Use $zilin-skill-integrator to integrate my new skill into codex-skills-zilin and show me the README and diff before committing."
