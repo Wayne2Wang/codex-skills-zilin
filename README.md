@@ -17,13 +17,13 @@ the existing ones.
 | --- | --- |
 | [zilin&#8209;paper&#8209;adapter](skills/zilin-paper-adapter) | Adapt LaTeX papers to official conference templates while preserving manuscript content. |
 | [zilin&#8209;paper&#8209;checker](skills/zilin-paper-checker) | Audit papers for technical correctness, formatting, venue compliance, and reference integrity. |
+| [zilin&#8209;slide&#8209;narrator](skills/zilin-slide-narrator) | Turn PDF slides and rough notes into a narrated player and video with audio-aligned captions. |
 
 ### Miscellaneous
 
 | Skill | Purpose |
 | --- | --- |
 | [zilin&#8209;cat&#8209;hatcher](skills/zilin-cat-hatcher) | Turn your cat photo into a realistic animated Codex pet. |
-| [zilin&#8209;slide&#8209;narrator](skills/zilin-slide-narrator) | Turn PDF slides and rough notes into a narrated player and video with audio-aligned captions. |
 
 Open a skill's README for usage examples and requirements.
 
