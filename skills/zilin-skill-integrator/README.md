@@ -10,7 +10,10 @@ matching its documentation, packaging, and review conventions.
 
 `$zilin-skill-integrator` inspects the source package and repository, writes a
 matching README, updates the catalog, validates the integration, and presents it
-for review within your requested commit and publication scope.
+for review within your requested commit and publication scope. For an already-installed
+skill, a completed integration also backs up the standalone copy and migrates it
+to the collection link, including after a rename. Preview-only, repository-only,
+and no-install requests leave the installation untouched.
 
 For a **new skill**, it checks for name collisions, creates the package and README,
 and adds a catalog entry. For an **update**, it reconciles added, changed, and

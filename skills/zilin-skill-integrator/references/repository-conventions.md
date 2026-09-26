@@ -44,7 +44,12 @@ The root installation instructions use a shallow clone into
 `~/codex-skills-zilin` and `scripts/install-skills.sh`. Named arguments install
 one or several skills; no arguments discovers all skills. The script symlinks
 into the user's agents skills directory and skips existing installations.
-Pulling the clone updates skills already linked to it. Keep this shared logic
+Completed integrations migrate an existing standalone installation to the collection
+link by default, preserving a timestamped backup outside discovery directories and
+the public tree. Authorized renames also retire the old discovery entry. Honor
+preview-only, repository-only, and no-install requests; reconcile divergent local
+edits before migration. See the installation section of `SKILL.md` for verification
+and rollback requirements. Pulling the clone updates skills already linked to it. Keep this shared logic
 centralized; do not reintroduce the removed standalone-installation migration
 section merely because it appeared in an older conversation.
 

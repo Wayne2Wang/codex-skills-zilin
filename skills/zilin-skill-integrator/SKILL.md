@@ -51,8 +51,18 @@ Review the complete change set, including untracked files, and compare functiona
 
 ## Install and publish within scope
 
-Repository integration, local installation, a commit, and a remote push are distinct outcomes. Honor the current session's authorization for each without repeatedly asking about an already authorized action. Historical pushes in another task are evidence of workflow, not standing authorization for the present destination.
+Repository integration, local installation, a commit, and a remote push are distinct outcomes. For this collection, completing an integration of an already-installed skill includes migrating that installation to the collection link by default, including after an authorized rename. Do not require a separate follow-up request for this migration. Honor explicit preview-only, repository-only, or no-install instructions; preview-only work leaves the installation untouched. A commit or remote push still follows the current session's publication scope. Historical pushes in another task are not standing authorization for the present destination.
 
-When local installation is requested, use the collection installer. It skips existing files and symlinks; inspect and report an existing standalone installation rather than claiming it was updated. Do not replace an existing installation or create duplicate discovery entries without resolving that migration within the user's scope.
+### Keep the local installation linked
+
+After the integrated package passes validation, inspect the actual skill discovery locations for both the original and final names and resolve any symlinks. Migrate only installations identified as this source skill; leave unrelated same-name entries alone. Recompare the installed content before moving it so newer local edits are not lost. Resolve divergent functional changes before migration.
+
+- If the installed entry already resolves to the final repository package, leave it in place and verify it; no reinstall is needed.
+- For a standalone copy, move the complete original to a unique timestamped backup outside all skill discovery directories and outside the public repository. Preserve all original files, including resources excluded from publication. Never use a renamed folder within a discovery directory as the backup.
+- For an old or stale symlink belonging to this skill, record its target and remove only the link, never its destination. After a rename, retire the old-name discovery entry as part of the same migration.
+- Use the collection installer with the final skill name. Because it skips existing entries, resolve a conflicting destination before running it; a skip does not prove a successful migration. If a destination belongs to another skill or has unresolved edits, ask for clarification rather than overwriting it.
+- Verify that the final entry is a symlink to the intended repository package, its `SKILL.md` is readable and declares the final name, and no old-name or duplicate entry for this skill remains in the inspected discovery locations. If installation or verification fails, undo only newly created entries and restore the prior copies or links.
+
+If the skill was not installed, install it only when requested. Report the active name, link destination, and backup location after migration. A linked installation receives subsequent checkout updates without another copy step. Filesystem permission requirements still apply; report any blocked migration accurately.
 
 When publication is authorized, verify the intended remote and branch, synchronize safely, stage only the intended files, commit, and push through the authorized route. Do not force-push or bypass an approval rejection. If blocked, finish the local preview and state the exact remaining action and reason. After a successful push, verify the remote commit and relevant CI status; distinguish pending CI from passed CI. Report local edits, commit, push, and installation status precisely.
