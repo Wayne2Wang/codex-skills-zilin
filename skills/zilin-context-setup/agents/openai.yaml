@@ -1,0 +1,6 @@
+interface:
+  display_name: "Zilin Context Setup"
+  short_description: "Keep project context concise as ideas evolve"
+  default_prompt: "Use $zilin-context-setup to set up or update this project's context and selectively log important developments."
+policy:
+  allow_implicit_invocation: true

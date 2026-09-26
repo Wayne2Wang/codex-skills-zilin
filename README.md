@@ -26,6 +26,7 @@ the existing ones.
 | --- | --- |
 | [zilin&#8209;cat&#8209;hatcher](skills/zilin-cat-hatcher) | Turn your cat photo into a realistic animated Codex pet. |
 | [zilin&#8209;skill&#8209;integrator](skills/zilin-skill-integrator) | Integrate skills into this collection with consistent documentation, packaging, and validation. |
+| [zilin&#8209;context&#8209;setup](skills/zilin-context-setup) | Maintain concise project context and a selective history of important decisions. |
 
 Open a skill's README for usage examples and requirements.
 
