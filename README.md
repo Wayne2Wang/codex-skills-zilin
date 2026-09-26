@@ -15,6 +15,7 @@ the existing ones.
 
 | Skill | Purpose |
 | --- | --- |
+| [zilin&#8209;context&#8209;setup](skills/zilin-context-setup) | Maintain concise project context and a selective history of important decisions. |
 | [zilin&#8209;paper&#8209;adapter](skills/zilin-paper-adapter) | Adapt LaTeX papers to official conference templates while preserving manuscript content. |
 | [zilin&#8209;paper&#8209;checker](skills/zilin-paper-checker) | Audit papers for technical correctness, formatting, venue compliance, and reference integrity. |
 | [zilin&#8209;figure&#8209;optimizer](skills/zilin-figure-optimizer) | Reduce figure and compiled PDF sizes using rendered dimensions and visual verification. |
@@ -26,7 +27,6 @@ the existing ones.
 | --- | --- |
 | [zilin&#8209;cat&#8209;hatcher](skills/zilin-cat-hatcher) | Turn your cat photo into a realistic animated Codex pet. |
 | [zilin&#8209;skill&#8209;integrator](skills/zilin-skill-integrator) | Integrate skills into this collection with consistent documentation, packaging, and validation. |
-| [zilin&#8209;context&#8209;setup](skills/zilin-context-setup) | Maintain concise project context and a selective history of important decisions. |
 
 Open a skill's README for usage examples and requirements.
 
