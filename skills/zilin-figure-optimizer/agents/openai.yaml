@@ -1,0 +1,4 @@
+interface:
+  display_name: "Zilin Figure Optimizer"
+  short_description: "Shrink paper visuals using rendered size and visual QA"
+  default_prompt: "Use $zilin-figure-optimizer to reduce my project's figure and PDF sizes based on their rendered dimensions, preserving visible quality and checking the rebuilt PDF for artifacts."
