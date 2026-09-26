@@ -2,8 +2,9 @@
 
 > *You write. It formats.*
 
-A Codex skill that initializes an empty Overleaf or LaTeX project, or migrates an
-existing paper, using a verified official conference template.
+A Codex skill that initializes an empty Overleaf or LaTeX project from a personal
+Overleaf starter, then adapts it to a verified official conference template.
+Existing papers are migrated directly without importing the starter over them.
 
 [![Codex Skill](https://img.shields.io/badge/Codex-Skill-111111)](https://developers.openai.com/)
 [![LaTeX](https://img.shields.io/badge/LaTeX-008080?logo=latex&logoColor=white)](https://www.latex-project.org/)
@@ -11,17 +12,17 @@ existing paper, using a verified official conference template.
 
 `$zilin-paper-adapter` inspects the whole project, verifies the live official
 source, and chooses initialization, content-preserving migration, or an audit.
-New scaffolds contain headings and explicit TODOs; existing author content stays intact.
+New scaffolds preserve the starter’s reusable structure and macros, with explicit TODOs in place of sample metadata. Existing author content stays intact.
 
 | It can | It will not |
 | --- | --- |
-| Initialize an empty project with headings and TODOs | Draft manuscript prose or add fake references |
+| Initialize an empty project from the personal starter | Draft manuscript prose or add fake references |
 | Reorganize files and update template wiring | Rewrite existing manuscript content |
 | Download the verified official template | Use a remembered or unofficial template |
 | Keep required author sections active with obvious TODOs | Invent authors, results, or disclosures |
 | Show unused key template components as explained commented lines | Load unnecessary optional components silently |
 
-A new scaffold uses this layout; migrations preserve equivalent clean structures
+A new scaffold follows the starter’s layout; this is its general shape. migrations preserve equivalent clean structures
 and existing manuscript filenames:
 
 ```text
@@ -30,8 +31,8 @@ paper/
 ├── main.bib
 ├── preamble.tex
 ├── sections/
-│   ├── abstract.tex
-│   ├── introduction.tex
+│   ├── 0_abstract.tex
+│   ├── 1_intro.tex
 │   ├── ...
 │   └── X1_appendix.tex
 └── style_<venue><year>/      complete, unchanged official bundle
@@ -50,7 +51,8 @@ select this skill. See [SKILL.md](SKILL.md) for the complete workflow.
 
 ```text
 Use $zilin-paper-adapter to initialize this empty LaTeX project with the
-official conference review template for the venue and year I specify.
+personal Overleaf starter, then adapt it to the official conference review
+template for the venue and year I specify.
 Use headings and TODOs only; do not draft manuscript text or add citations.
 ```
 
@@ -71,7 +73,8 @@ to the official ICML 2027 submission template. Do not modify any files.
 ## Inputs and Requirements
 
 - The project directory and target conference, year, and submission stage.
-- An optional section outline for a new scaffold.
+- Access to the configured personal Overleaf starter for initialization (or an exported copy).
+- An optional alternative starter or section outline.
 - Access to the live official author guidelines and template download.
 - A compatible LaTeX build environment and PDF inspection tools for validation.
 
@@ -86,6 +89,10 @@ actual year and is reported as provisional.
 - Preserved author content, or clearly marked placeholders and an empty author bibliography.
 - A source and validation report identifying unresolved author TODOs, inactive
   optional components, and any old template files retained or removed.
+
+Bibliography and appendix inputs remain active, including `sections/X1_appendix.tex`.
+Empty bibliographies can produce no-citation diagnostics; the skill reports these
+instead of disabling references or inserting fake citations.
 
 An empty scaffold is not a completed or submission-ready paper. Bibliography
 rendering may remain unvalidated until the first real citation is added. Audit-only

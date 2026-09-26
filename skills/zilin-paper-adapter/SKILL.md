@@ -1,6 +1,6 @@
 ---
 name: zilin-paper-adapter
-description: Initialize an empty Overleaf or LaTeX project with an official conference template, or migrate an existing paper while preserving all author-written content. Use for paper scaffolding, venue or template changes, project structure normalization, or template-conformance audits. Do not use to draft, rewrite, or complete manuscript content.
+description: Initialize a new Overleaf or LaTeX paper from the user’s personal template and adapt it to an official conference template, or migrate an existing paper while preserving all author-written content. Use for paper scaffolding, venue or template changes, project structure normalization, or template-conformance audits. Do not use to draft, rewrite, or complete manuscript content.
 ---
 
 # Zilin Paper Adapter
@@ -9,7 +9,7 @@ Initialize a paper scaffold or convert an existing project structurally and loss
 
 ## Choose the mode
 
-- **Initialize:** The project contains no author-written manuscript content, bibliography records, or assets; it may have an empty entry point or verified untouched template boilerplate. Set up a compiling skeleton with explicit author TODOs and no invented manuscript text.
+- **Initialize:** The project contains no author-written manuscript content, bibliography records, or assets; it may have an empty entry point or verified untouched template boilerplate. Start from the personal template below, then adapt it to the requested conference with explicit author TODOs and no invented manuscript text.
 - **Migrate:** Any author-written content exists, including partial drafts, comments, bibliography records, or assets. Preserve it and apply the existing migration workflow; a short or incomplete paper is not an empty project.
 - **Audit or brainstorm:** If the user requests inspection or planning only, report findings or a proposed layout without modifying files.
 
@@ -65,20 +65,29 @@ Templates and author rules are time-sensitive. Check the live official conferenc
 
 If the requested year's official template has not been released, or official sources conflict, stop before substituting another year. Present the evidence and ask the user which source or fallback to use. Keep a concise record of the source URL and retrieval date for the handoff, but do not add provenance prose to the manuscript.
 
-## Initialize an empty project
+## Initialize from the personal template
 
-Verify the official template before creating a scaffold that claims to target it. Use the project structure above and any known user conventions. In a new project, default to `main.tex`, `main.bib`, `preamble.tex` for custom packages/macros, and `sections/` for the abstract and manuscript sections. Add figures or tables directories only when useful. Keep the complete official bundle in `style_<venue><year>/`; do not mix sample bibliography records with the author's bibliography.
+Use the user's reusable Overleaf project as the default starting point for new papers:
 
-- Keep `main.tex` focused on the official class/style, submission-mode settings, title metadata, section order, bibliography, and appendix/supplement wiring. Load custom setup from `preamble.tex` without altering the vendor files.
-- Use an explicitly requested section outline when available. Otherwise use conventional structural placeholders such as abstract, introduction, related work, method, experiments, and conclusion, making clear that they are editable scaffolding rather than an agreed research narrative. Section files may contain headings and TODOs, but no drafted claims or prose.
-- Use obvious placeholders such as `TODO: Paper title` for unknown required metadata. Keep the official anonymous-author behavior in review mode; do not invent identities, affiliations, or a plausible submission ID. Retain an official placeholder ID when available and flag it for replacement.
-- For a new scaffold, name the supplementary/appendix content file `sections/X1_appendix.tex`, not `supplementary.tex`, and use that path in its input hook. Preserve an existing manuscript's filenames unless the user requests renaming.
-- Apply the active, inactive, and awaiting-author component states below. Required author-supplied sections must contain visible TODOs. Optional supplementary material can remain a commented hook until needed; do not force a separate supplement format before checking the venue's rules.
-- Wire the bibliography to an empty author `.bib` file. Do not insert fake references, copy sample citations, or use `\nocite{*}` to conceal the absence of citations. If the bibliography tool fails on an uncited skeleton, keep the intended bibliography commands visibly commented with an instruction to enable them after adding the first real citation, and report that bibliography rendering is not yet validated.
-- Include appropriate build-output ignore rules, preserving any existing ones. Do not add unnecessary packages, build infrastructure, or fabricated content merely to fill the template.
-- If the requested year's template is unavailable, follow the source/fallback rule above. An explicitly authorized prior-year fallback must retain its actual year in its style directory and be reported as provisional; never relabel it as the requested official release.
+- Git source: `https://git@git.overleaf.com/69b828b9d9d4bdcb2dee3c5e`
+- Overleaf project: `https://www.overleaf.com/project/69b828b9d9d4bdcb2dee3c5e`
 
-Compile and visually inspect the resulting skeleton where supported. Report it as an initialized scaffold, with unresolved TODOs and untested content-dependent elements, not as a completed or submission-ready paper.
+Clone the current template into a separate temporary directory and inspect its instructions, structure, entry point, custom preamble, bibliography, section files, and appendix. Record the source commit in the setup handoff. Do not assume the template is unchanged from an earlier run. If access fails, ask the user to restore access or provide an exported template; do not silently substitute a generic scaffold.
+
+Import reusable template files into the destination project without copying `.git`, credentials, or generated build files. Preserve the destination's Git history, remote, instructions, and existing files. Never push to or modify the source template as part of initializing another project. Use migration mode instead if the destination contains author content; do not overwrite it with the starter. If the user explicitly requests a different starter, follow that choice.
+
+The personal template defines the preferred organization and reusable author tools; it is not authority for the requested conference's rules. Verify the target official template, then apply the content-preserving migration workflow to the imported project:
+
+- Preserve the starter's section filenames, ordering, custom macros, and preamble organization where compatible with the target venue. Avoid replacing them with a generic numbered outline. Use `sections/X1_appendix.tex` for supplementary content by default; rename a starter file such as `X1_suppl.tex` and update every reference to it. Preserve existing manuscript filenames in migration mode unless renaming is requested.
+- Keep bibliography and supplementary inputs **active**, even when their content is empty or consists of placeholders. Do not comment them out to obtain a clean build. Report expected empty-bibliography warnings or BibTeX no-citation errors honestly; do not invent citations or insert `\nocite{*}` to hide them.
+- Preserve the starter's appendix contents-page capability where compatible, but adapt its title, numbering, column layout, and page breaks to the official target template. If the venue requires a separate supplement, provide an active separate entry point instead of disabling the supplement. Explain which output is the main submission and which includes supplementary material.
+- Reconcile package order and duplicate definitions when combining the custom preamble with official helpers, especially hyperref, cleveref, and TODO macros. Retain useful author macros without modifying vendor files or carrying over old-venue formatting overrides.
+- Inspect sample title, author identities, affiliations, prose, references, and checklist answers. Do not present verified starter examples as actual project content: replace sample metadata with explicit TODOs and keep review-mode anonymity. Omit verified sample bibliography entries from the new author's bibliography. Preserve ambiguous or substantive material and clarify before discarding it.
+- Remove old-venue checklist hooks and assets only after confirming they are template boilerplate and no longer needed. Add any target-required author sections with active, unmistakable TODOs; never transfer completed checklist answers as if they described the new paper.
+- Keep the complete official bundle unchanged in `style_<venue><year>/`. If an explicitly authorized prior-year fallback is used, retain its actual year in the directory and identify it as provisional rather than relabeling it as the requested release.
+- Preserve or add appropriate build-output ignore rules without introducing unnecessary infrastructure.
+
+Compile and visually inspect the adapted starter where supported, including its active appendix. Report remaining author TODOs, bibliography limitations, and any unverified elements. An initialized template is not a completed or submission-ready paper.
 
 ## Wire official-template components (both modes)
 

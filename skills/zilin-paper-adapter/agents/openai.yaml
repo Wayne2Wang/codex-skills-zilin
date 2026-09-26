@@ -1,4 +1,4 @@
 interface:
   display_name: "Zilin Paper Adapter"
   short_description: "Set up or adapt papers with official templates."
-  default_prompt: "Use $zilin-paper-adapter to initialize an empty Overleaf or LaTeX project, or adapt an existing paper, using the official target-conference template without drafting or changing manuscript content."
+  default_prompt: "Use $zilin-paper-adapter to initialize a new paper from my personal Overleaf template and adapt it to the requested conference, or migrate an existing paper without changing manuscript content."
