@@ -16,7 +16,7 @@ the existing ones.
 | Skill | Purpose |
 | --- | --- |
 | [zilin&#8209;context&#8209;setup](skills/zilin-context-setup) | Maintain concise project context and a selective history of important decisions. |
-| [zilin&#8209;paper&#8209;adapter](skills/zilin-paper-adapter) | Adapt LaTeX papers to official conference templates while preserving manuscript content. |
+| [zilin&#8209;paper&#8209;adapter](skills/zilin-paper-adapter) | Initialize or migrate LaTeX projects with official conference templates, preserving author content. |
 | [zilin&#8209;paper&#8209;checker](skills/zilin-paper-checker) | Audit papers for technical correctness, formatting, venue compliance, and reference integrity. |
 | [zilin&#8209;figure&#8209;optimizer](skills/zilin-figure-optimizer) | Reduce figure and compiled PDF sizes using rendered dimensions and visual verification. |
 | [zilin&#8209;slide&#8209;narrator](skills/zilin-slide-narrator) | Turn PDF slides and rough notes into a narrated player and video with audio-aligned captions. |

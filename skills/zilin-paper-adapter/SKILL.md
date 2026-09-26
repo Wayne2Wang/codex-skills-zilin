@@ -1,11 +1,21 @@
 ---
 name: zilin-paper-adapter
-description: Migrate an existing Overleaf or LaTeX paper to an official conference template while preserving all author-written manuscript and bibliography content. Use when changing a paper's venue or template version, correcting its conference-project structure, or auditing whether an existing migration conforms to the target venue. Do not use to draft, rewrite, or complete the paper.
+description: Initialize an empty Overleaf or LaTeX project with an official conference template, or migrate an existing paper while preserving all author-written content. Use for paper scaffolding, venue or template changes, project structure normalization, or template-conformance audits. Do not use to draft, rewrite, or complete manuscript content.
 ---
 
 # Zilin Paper Adapter
 
-Convert the project structurally and losslessly: the result should use the verified official template for the requested venue, year, and submission stage, while the authors' title, prose, equations, figures, tables, labels, citations, bibliography records, comments, and supplementary material remain unchanged.
+Initialize a paper scaffold or convert an existing project structurally and losslessly: the result should use the verified official template for the requested venue, year, and submission stage, while the authors' title, prose, equations, figures, tables, labels, citations, bibliography records, comments, and supplementary material remain unchanged.
+
+## Choose the mode
+
+- **Initialize:** The project contains no author-written manuscript content, bibliography records, or assets; it may have an empty entry point or verified untouched template boilerplate. Set up a compiling skeleton with explicit author TODOs and no invented manuscript text.
+- **Migrate:** Any author-written content exists, including partial drafts, comments, bibliography records, or assets. Preserve it and apply the existing migration workflow; a short or incomplete paper is not an empty project.
+- **Audit or brainstorm:** If the user requests inspection or planning only, report findings or a proposed layout without modifying files.
+
+Inspect the whole project before choosing a mode. An empty `main.tex` alone does not establish that the project is empty. If template boilerplate and author content cannot be distinguished confidently, preserve the ambiguous material and clarify only what blocks the work.
+
+The boundaries, official-source checks, and verification below apply to both initialization and migration. Initialization does not require a compilable original or an old template to remove.
 
 ## Non-negotiable boundaries
 
@@ -55,7 +65,22 @@ Templates and author rules are time-sensitive. Check the live official conferenc
 
 If the requested year's official template has not been released, or official sources conflict, stop before substituting another year. Present the evidence and ask the user which source or fallback to use. Keep a concise record of the source URL and retrieval date for the handoff, but do not add provenance prose to the manuscript.
 
-## Perform a content-preserving migration
+## Initialize an empty project
+
+Verify the official template before creating a scaffold that claims to target it. Use the project structure above and any known user conventions. In a new project, default to `main.tex`, `main.bib`, `preamble.tex` for custom packages/macros, and `sections/` for the abstract and manuscript sections. Add figures or tables directories only when useful. Keep the complete official bundle in `style_<venue><year>/`; do not mix sample bibliography records with the author's bibliography.
+
+- Keep `main.tex` focused on the official class/style, submission-mode settings, title metadata, section order, bibliography, and appendix/supplement wiring. Load custom setup from `preamble.tex` without altering the vendor files.
+- Use an explicitly requested section outline when available. Otherwise use conventional structural placeholders such as abstract, introduction, related work, method, experiments, and conclusion, making clear that they are editable scaffolding rather than an agreed research narrative. Section files may contain headings and TODOs, but no drafted claims or prose.
+- Use obvious placeholders such as `TODO: Paper title` for unknown required metadata. Keep the official anonymous-author behavior in review mode; do not invent identities, affiliations, or a plausible submission ID. Retain an official placeholder ID when available and flag it for replacement.
+- For a new scaffold, name the supplementary/appendix content file `sections/X1_appendix.tex`, not `supplementary.tex`, and use that path in its input hook. Preserve an existing manuscript's filenames unless the user requests renaming.
+- Apply the active, inactive, and awaiting-author component states below. Required author-supplied sections must contain visible TODOs. Optional supplementary material can remain a commented hook until needed; do not force a separate supplement format before checking the venue's rules.
+- Wire the bibliography to an empty author `.bib` file. Do not insert fake references, copy sample citations, or use `\nocite{*}` to conceal the absence of citations. If the bibliography tool fails on an uncited skeleton, keep the intended bibliography commands visibly commented with an instruction to enable them after adding the first real citation, and report that bibliography rendering is not yet validated.
+- Include appropriate build-output ignore rules, preserving any existing ones. Do not add unnecessary packages, build infrastructure, or fabricated content merely to fill the template.
+- If the requested year's template is unavailable, follow the source/fallback rule above. An explicitly authorized prior-year fallback must retain its actual year in its style directory and be reported as provisional; never relabel it as the requested official release.
+
+Compile and visually inspect the resulting skeleton where supported. Report it as an initialized scaffold, with unresolved TODOs and untested content-dependent elements, not as a completed or submission-ready paper.
+
+## Wire official-template components (both modes)
 
 Use the official example only to learn required preamble, package, title/author, bibliography, appendix, and submission-mode wiring. Do not copy its example paper text into the manuscript.
 
@@ -66,6 +91,8 @@ For each key official-template component, choose one of these explicit states in
 - **Active and awaiting authors:** For a mandatory author-supplied section or field, insert the official heading or structural hook in active, compiling form and place a conspicuous active TODO beneath it, such as `\textbf{TODO (authors -- required before submission): ...}`. Do not comment out the heading, hook, or TODO. Do not draft the missing substantive content, and do not let the placeholder read as compliance.
 
 Keep explanatory comments next to inactive optional lines and author TODOs so the resulting Overleaf project is self-explanatory without consulting the migration report. Do not activate unused optional code solely to make every distributed file execute.
+
+## Perform a content-preserving migration
 
 Make the smallest structural edits needed to the entry point and project support files:
 
@@ -84,10 +111,10 @@ Do not delete the old template bundle until the migrated project builds and a re
 Validate against both the official template and the current author guidelines, not merely successful compilation.
 
 1. Compile from a clean build with the engine and bibliography workflow appropriate to the project.
-2. Treat missing files, undefined control sequences, citation-system incompatibilities, accidental final mode, and wrong paper size as migration defects.
+2. Treat missing files, undefined control sequences, citation-system incompatibilities, accidental final mode, and wrong paper size as setup or migration defects.
 3. Inspect the rendered PDF for required headers, line numbers, anonymity, margins, fonts, title layout, references, and appendix ordering. Do not repair content-originated overfull boxes by rewriting prose; report them.
 4. Search for stale old-venue names, style paths, checklists, final-copy flags, and bibliography styles. Some occurrences may be legitimate citations or comments; inspect before changing them.
-5. Compare the post-migration content inventory with the baseline. Every author content file and bibliography record must remain, with diffs limited to path/wiring changes explicitly required by the migration.
+5. For initialization, verify that placeholders are clearly marked, sample prose and sample references have not entered the author files, and all active inputs resolve. For migration, compare the post-migration content inventory with the baseline. Every author content file and bibliography record must remain, with diffs limited to path/wiring changes explicitly required by the migration.
 6. Review Git status and diff so generated build artifacts and accidental unrelated changes are absent.
 
 Report the official source used, structural changes, validation performed, old template files removed or retained, and any requirements that still need author input. Explicitly list key optional template components left inactive, why each was unnecessary, and where its commented loading line appears. Also identify every active TODO that authors must replace. Describe the project as fully compliant only when every checkable requirement passes; otherwise distinguish template/format compliance from unresolved substantive author obligations.

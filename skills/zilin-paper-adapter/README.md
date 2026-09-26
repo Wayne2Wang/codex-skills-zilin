@@ -2,34 +2,39 @@
 
 > *You write. It formats.*
 
-A Codex skill that migrates an existing paper to a new official conference template.
+A Codex skill that initializes an empty Overleaf or LaTeX project, or migrates an
+existing paper, using a verified official conference template.
 
 [![Codex Skill](https://img.shields.io/badge/Codex-Skill-111111)](https://developers.openai.com/)
 [![LaTeX](https://img.shields.io/badge/LaTeX-008080?logo=latex&logoColor=white)](https://www.latex-project.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../../LICENSE)
 
-`$zilin-paper-adapter` verifies the live official source, rewires the project, and leaves the manuscript unchanged.
+`$zilin-paper-adapter` inspects the whole project, verifies the live official
+source, and chooses initialization, content-preserving migration, or an audit.
+New scaffolds contain headings and explicit TODOs; existing author content stays intact.
 
 | It can | It will not |
 | --- | --- |
-| Reorganize files and update template wiring | Rewrite manuscript prose |
+| Initialize an empty project with headings and TODOs | Draft manuscript prose or add fake references |
+| Reorganize files and update template wiring | Rewrite existing manuscript content |
 | Download the verified official template | Use a remembered or unofficial template |
 | Keep required author sections active with obvious TODOs | Invent authors, results, or disclosures |
 | Show unused key template components as explained commented lines | Load unnecessary optional components silently |
 
-The project is normalized toward:
+A new scaffold uses this layout; migrations preserve equivalent clean structures
+and existing manuscript filenames:
 
 ```text
 paper/
 ├── main.tex
-├── references.bib
+├── main.bib
+├── preamble.tex
 ├── sections/
+│   ├── abstract.tex
 │   ├── introduction.tex
-│   └── ...
-├── figures/
-└── style_iclr2027/
-    ├── iclr2027_conference.sty
-    └── ...
+│   ├── ...
+│   └── X1_appendix.tex
+└── style_<venue><year>/      complete, unchanged official bundle
 ```
 
 The resulting entry point accounts for the official template's key components. Optional components that are not needed remain visible as commented loading lines with an explanation, while mandatory author-supplied sections remain active with a conspicuous TODO until the authors complete them.
@@ -42,6 +47,15 @@ select this skill. See [SKILL.md](SKILL.md) for the complete workflow.
 ## Example Usage
 
 **User**
+
+```text
+Use $zilin-paper-adapter to initialize this empty LaTeX project with the
+official conference review template for the venue and year I specify.
+Use headings and TODOs only; do not draft manuscript text or add citations.
+```
+
+For an existing paper:
+
 ```text
 Use $zilin-paper-adapter to migrate this existing Overleaf paper
 from the NeurIPS 2025 template to the official ICLR 2027 review template.
@@ -53,6 +67,29 @@ You can also ask for an audit without requesting changes:
 Use $zilin-paper-adapter to audit whether this repository conforms
 to the official ICML 2027 submission template. Do not modify any files.
 ```
+
+## Inputs and Requirements
+
+- The project directory and target conference, year, and submission stage.
+- An optional section outline for a new scaffold.
+- Access to the live official author guidelines and template download.
+- A compatible LaTeX build environment and PDF inspection tools for validation.
+
+This package contains workflow instructions and agent metadata, not a compiler
+or bundled conference templates. An unavailable or conflicting official release
+requires an explicit source or fallback choice; a prior-year fallback retains its
+actual year and is reported as provisional.
+
+## What You Receive
+
+- An initialized scaffold or migrated project with the complete official template bundle.
+- Preserved author content, or clearly marked placeholders and an empty author bibliography.
+- A source and validation report identifying unresolved author TODOs, inactive
+  optional components, and any old template files retained or removed.
+
+An empty scaffold is not a completed or submission-ready paper. Bibliography
+rendering may remain unvalidated until the first real citation is added. Audit-only
+requests produce findings without file changes.
 
 ## License
 
